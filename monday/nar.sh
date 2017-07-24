@@ -1,23 +1,9 @@
 #!/bin/bash
-a=$1
-b=$2
-c=$3
- 
-if [ $# -lt 3 ]
+a=10
+b=20
+if [ $a -gt $b ]
 then
- echo "$0 n1 n2 n3"
- exit 1
-fi
- 
-if [ $a -gt $b -a $a -gt $c ]
-then
- echo "$a is largest integer"
-elif [ $b -gt $a -a $b -gt $c ]
-then
- echo "$b is largest integer"
-elif [ $c -gt $a -a $c -gt $b ];
-then
- echo "$c is largest integer"
+echo "$a is grater than $b"
 else
- echo "Sorry cannot guess number"
+echo "$b is gt than $a"
 fi

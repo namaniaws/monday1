@@ -8,6 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:wq
 :wq!
 
 # Search String History (newest to oldest):
@@ -19,36 +20,64 @@
 # Input Line History (newest to oldest):
 
 # Registers:
-"1	LINE	0
-	Hello World
+""1	LINE	0
+	a=$1
+	b=$2
+	c=$3
+	 
+	if [ $# -lt 3 ]
+	then
+	 echo "$0 n1 n2 n3"
+	 exit 1
+	fi
+	 
+	if [ $a -gt $b -a $a -gt $c ]
+	then
+	 echo "$a is largest integer"
+	elif [ $b -gt $a -a $b -gt $c ]
+	then
+	 echo "$b is largest integer"
+	elif [ $c -gt $a -a $c -gt $b ];
+	then
+	 echo "$c is largest integer"
+	else
+	 echo "Sorry cannot guess number"
+	fi
 "2	LINE	0
-	$ ./my-script.sh
+	Hello World
 "3	LINE	0
-	$ chmod 755 my-script.sh
+	$ ./my-script.sh
 "4	LINE	0
-	$ echo 'echo Hello World' >> my-script.sh
+	$ chmod 755 my-script.sh
 "5	LINE	0
+	$ echo 'echo Hello World' >> my-script.sh
+"6	LINE	0
 	o '#!/bin/sh' > my-script.sh
-""-	CHAR	0
+"-	CHAR	0
 	$
 
 # File marks:
-'0  14  0  ~/monday/nar.sh
-'1  23  1  ~/monday/nar.sh
-'2  1  0  ~/monday/nar.sh
+'0  9  1  ~/monday/nar.sh
+'1  10  0  ~/monday/nar.sh
+'2  10  1  ~/monday/nar.sh
+'3  1  0  ~/monday/nar.sh
 
 # Jumplist (newest first):
--'  14  0  ~/monday/nar.sh
+-'  9  1  ~/monday/nar.sh
+-'  10  0  ~/monday/nar.sh
 -'  1  0  ~/monday/nar.sh
+-'  14  0  ~/monday/nar.sh
 -'  23  1  ~/monday/nar.sh
 -'  6  0  ~/monday/nar.sh
 
 # History of marks within files (newest to oldest):
 
 > ~/monday/nar.sh
-	"	14	0
-	^	23	2
-	.	23	0
+	"	9	1
+	^	9	2
+	.	9	1
 	+	1	0
 	+	1	11
-	+	23	0
+	+	10	0
+	+	1	0
+	+	9	1
